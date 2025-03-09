@@ -21,7 +21,7 @@ import { filterAudioFormat } from '../utils/audioUtils';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 const MINI_PLAYER_HEIGHT = 60; // Adjust based on your mini player height
-const MINI_PLAYER_MARGIN_BOTTOM = 100; // Increased margin to avoid overlap with tab bar
+const MINI_PLAYER_MARGIN_BOTTOM = 90; // Increased margin to avoid overlap with tab bar
 
 const MusicPlayer = ({ track, visible }) => {
   // Get safe area insets
@@ -243,7 +243,28 @@ const MusicPlayer = ({ track, visible }) => {
   };
 
   const getRandomColor = () => {
-    const colors = ['#1DB954', '#E91E63', '#9C27B0', '#3F51B5', '#FF9800'];
+    const colors = [
+      '#1DB954', // Spotify Green
+      '#E91E63', // Pink
+      '#9C27B0', // Purple
+      '#3F51B5', // Indigo
+      '#FF9800', // Orange
+      '#7B68EE', // Medium Slate Blue
+      '#9370DB', // Medium Purple
+      '#00CED1', // Dark Turquoise
+      '#FF6347', // Tomato
+      '#4682B4', // Steel Blue
+      '#20B2AA', // Light Sea Green
+      '#6A5ACD', // Slate Blue
+      '#8A2BE2', // Blue Violet
+      '#FF4500', // Orange Red
+      '#32CD32', // Lime Green
+      '#BA55D3', // Medium Orchid
+      '#4169E1', // Royal Blue
+      '#FF1493', // Deep Pink
+      '#00BFFF', // Deep Sky Blue
+      '#FF7F50'  // Coral
+    ];
     return colors[Math.floor(Math.random() * colors.length)];
   };
 
@@ -453,7 +474,7 @@ const styles = StyleSheet.create({
     width: SCREEN_WIDTH,
     left: 0,
     right: 0,
-    backgroundColor: '#121212',
+    backgroundColor: 'transparent',
     zIndex: 9999,
     overflow: 'hidden',
   },

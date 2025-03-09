@@ -20,7 +20,7 @@ const MiniPlayer = ({
   loading, 
   onPress, 
   onTogglePlayback,
-  dominantColor = '#1DB954' // Default color if none provided
+  dominantColor = '#B19CD9' // Default color if none provided
 }) => {
   // Calculate progress percentage
   const progress = duration > 0 ? (position / duration) * 100 : 0;
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 4,
-    marginHorizontal: 8,
+    marginHorizontal: 20,
     marginBottom: 8,
   },
   background: {

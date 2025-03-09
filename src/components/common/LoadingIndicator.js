@@ -8,7 +8,7 @@ const LoadingIndicator = ({ loading, error, onRetry }) => {
   if (loading) {
     return (
       <View style={styles.centered}>
-        <ActivityIndicator size="large" color="#B19CD9" />
+        <ActivityIndicator size="large" color="#E91E63" />
       </View>
     );
   }

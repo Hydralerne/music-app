@@ -150,6 +150,18 @@ const HomeScreen = memo(({ navigation, route, onSelectTrack }) => {
     });
   }, [onSelectTrack]);
 
+  // Get background image from first pick if available
+  const backgroundImage = musicData.picks && musicData.picks.length > 0 
+    ? musicData.picks[0].posterLarge || musicData.picks[0].poster 
+    : null;
+    
+  // Pass background image to the tab navigator for color extraction
+  useEffect(() => {
+    if (backgroundImage) {
+      navigation.setParams({ backgroundImage });
+    }
+  }, [backgroundImage, navigation]);
+
   if (loading) {
     return <LoadingIndicator loading={true} />;
   }
@@ -162,11 +174,6 @@ const HomeScreen = memo(({ navigation, route, onSelectTrack }) => {
                      musicData.albums.length > 0 || 
                      musicData.singles.length > 0 ||
                      musicData.featuredCards.length > 0;
-                     
-  // Get background image from first pick if available
-  const backgroundImage = musicData.picks && musicData.picks.length > 0 
-    ? musicData.picks[0].posterLarge || musicData.picks[0].poster 
-    : null;
 
   return (
     <View style={styles.container}>
@@ -381,7 +388,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
   featuredCardsContainer: {
-    paddingHorizontal: 16,
+    paddingHorizontal: 20,
   },
 });
 

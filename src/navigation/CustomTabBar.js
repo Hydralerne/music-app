@@ -49,11 +49,11 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
               <Ionicons 
                 name={iconName} 
                 size={24} 
-                color={isFocused ? '#B19CD9' : '#fff'} 
+                color={isFocused ? '#E91E63' : '#fff'} 
               />
               <Text style={[
                 styles.tabLabel,
-                { color: isFocused ? '#B19CD9' : '#fff' }
+                { color: isFocused ? '#E91E63' : '#fff' }
               ]}>
                 {label}
               </Text>

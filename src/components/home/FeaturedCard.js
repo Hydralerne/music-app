@@ -10,7 +10,7 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
-const CARD_WIDTH = SCREEN_WIDTH - 32;
+const CARD_WIDTH = SCREEN_WIDTH - 40;
 // Using a 2:1.3 ratio as requested (width:height)
 const CARD_HEIGHT = (CARD_WIDTH / 2) * 1.3;
 
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    padding: 20, // Increased padding for better spacing
+    padding: 20,
   },
   heading: {
     fontSize: 12,
