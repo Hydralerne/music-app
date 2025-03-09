@@ -1,20 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useCallback } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { StatusBar } from 'react-native';
+
+// Import components
+import TabNavigator from './src/navigation/TabNavigator';
+import MusicPlayer from './src/components/MusicPlayer';
 
 export default function App() {
+  const [currentTrack, setCurrentTrack] = useState(null);
+  
+  // Use useCallback to memoize the handleSelectTrack function
+  const handleSelectTrack = useCallback((track) => {
+    setCurrentTrack(track);
+  }, []);
+  
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      <NavigationContainer theme={{ colors: { background: '#121212' } }}>
+        <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
+        
+        <TabNavigator onSelectTrack={handleSelectTrack} />
+        
+        <MusicPlayer 
+          track={currentTrack} 
+          visible={currentTrack !== null} 
+        />
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
