@@ -36,7 +36,7 @@ const MiniPlayer = ({
       activeOpacity={0.9}
     >
       <LinearGradient
-        colors={[primaryColor, secondaryColor]}
+        colors={['rgba(18, 18, 18,1)', 'rgba(18, 18, 18,1)']}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0 }}
         style={styles.background}

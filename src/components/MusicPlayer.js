@@ -474,7 +474,7 @@ const styles = StyleSheet.create({
     width: SCREEN_WIDTH,
     left: 0,
     right: 0,
-    backgroundColor: 'transparent',
+    backgroundColor: 'rgba(18, 18, 18,1)',
     zIndex: 9999,
     overflow: 'hidden',
   },
